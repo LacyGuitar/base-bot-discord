@@ -1,0 +1,34 @@
+
+
+
+const Discord = require('discord.js');
+const client = new Discord.Client(); 
+const { Client, MessageEmbed } = require('discord.js'); 
+
+module.exports = {
+  name: "snipe", 
+  alias: [], 
+
+execute (client, message, args){
+
+  const channel = message.mentions.channels.first() || message.channel; 
+
+  const msg = client.snipes.get(channel.id)
+
+  if(!msg){
+   message.channel.send("no one deleted a message yet!")
+   } else { 
+     const embed = new Discord.MessageEmbed()
+
+     .setTitle("snipe")
+     .setAuthor(`Message deleted by ${msg.delete.tag}`, msg.delete.displayAvatarURL)
+     .addField("Channel", `<#${msg.canal.id}>`)
+     .setDescription(msg.content)
+     .setColor("GREEN")
+
+     message.channel.send(embed)
+   }
+
+ }
+
+}
