@@ -37,5 +37,18 @@ client.on('message', (message) => {
 
 })
 
+
+//////////////////////////put this if you want a snipe command//////////////////////////////
+client.snipes = new Map()
+
+client.on('messageDelete', message => { 
+    client.snipes.set(message.channel.id, {
+      content: message.content,
+      delete: message.author, 
+      canal: message.channel 
+    })
+})
+
+
 //////////////////////////////put yor token here/////////////////////////////////////////////////
     client.login("TOKEN");
