@@ -1,0 +1,10 @@
+const Discord = require('discord.js');
+const client = new Discord.Client(); 
+const { Client, MessageEmbed } = require('discord.js'); 
+
+////////////////////////////name its for the name of the command, dont put anything in alias/////////////////////////////
+module.exports = {
+  name: "", 
+  alias: [], 
+
+execute (client, message, args){
