@@ -1,0 +1,57 @@
+onst Discord = require('discord.js');
+const client = new Discord.Client(); 
+const { Client, MessageEmbed } = require('discord.js'); 
+
+module.exports = {
+  name: "help", 
+  alias: [], 
+
+execute (client, message, args){
+
+  const embed1 = new Discord.MessageEmbed()
+
+//////////////////Title, description and color of the embed////////////////////////////////
+
+  .setTitle("Title")
+  .setDescription('Description')
+  .setFooter("Instagram: LacyGuitar  UwU")
+  .setColor("")
+
+  const embed2 = new Discord.MessageEmbed()
+
+  .setTitle("Title")
+  .setDescription("Description")
+  .setColor("color")
+
+  const embed3 = new Discord.MessageEmbed() 
+
+  .setTitle("Raros")
+  .setDescription("!di \nAl lado del comando pon lo que quieras para que el bot lo repita")
+  .setColor("ORANGE")
+
+  message.channel.send(embedprincipal).then(msg => {
+
+//////////////////////set the emojis reactions here//////////////////////////////////////
+
+    msg.react('')
+    msg.react('')
+    msg.react('')
+    msg.react('')
+    
+       if(message.author.id !== user.id) return;
+       if(reaction.emoji.name === ''){
+          msg.edit(embed1)
+        }
+       
+       if(message.author.id!== user.id) return;
+       if(reaction.emoji.name === ''){
+         msg.edit(embed2)
+       }
+
+        if(message.author.id!== user.id) return;
+        if(reaction.emoji.name === ''){
+         msg.edit(embed3)
+       }
+      }) 
+}
+}
